@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { test } from '../../api/test'
+import { tweets } from '../../api/laystall'
 
 export const GET_TWEETS = 'GET_TWEETS'
 
@@ -9,17 +9,15 @@ export default {
     },
     mutations: {
         [GET_TWEETS](state, data) {
-            console.log('GET_TWEETS',data)
             state.data = data
         }
     },
     actions: {
         [GET_TWEETS]({commit}, data) {
             return new Promise((resolve, reject) => {
-                test().then(response => {
+                tweets().then(response => {
                     commit(GET_TWEETS, response.data)
                 })
-
             })
         }
     }

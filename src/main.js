@@ -28,6 +28,13 @@ router.beforeEach(({meta, path}, from, next) => {
     if (auth && !isLogin && path !== '/login') {
         return next({ path: '/login' })
     }
+
+    // 统计代码
+    if (path) {
+        console.log("_hmt",path)
+        _hmt.push(['_trackPageview', '/#' + path]);
+    }
+
     next()
 })
 
