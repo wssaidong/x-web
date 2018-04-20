@@ -14,7 +14,7 @@ if (IS_ENV) { //生产环境
     }))
     plugins.push(new webpack.optimize.UglifyJsPlugin({ //压缩代码
         compress: {
-            warnings: false
+            warnings: true
         }
     }))
 }

@@ -11,7 +11,7 @@
 			<i class="el-icon-menu"></i>
 		</el-header>
 		<el-main>
-
+			{{data.size}}
 		</el-main>
 	</el-container>
 </template>
@@ -23,6 +23,9 @@
 
 			}
 		},
-        computed: mapState({ user: state => state.user }),
+        created (){
+            this.$store.dispatch('GET_TWEETS')
+        },
+        computed: mapState({ data: state => state.tweets.data }),
     }
 </script>

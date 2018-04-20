@@ -36,6 +36,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "axios": "0.17.1",
     "vue": "^2.1.4",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0",
