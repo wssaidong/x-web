@@ -15,8 +15,14 @@ export default [
             {
                 path: '/flyfile', //首页
                 meta: { auth: false },
-                component: resolve => require(['../pages/flyfile/'], resolve)
+                component: resolve => require(['../pages/flyfile'], resolve)
             },
+            {
+                path: '/flyfile/upload', //首页
+                meta: { auth: false },
+                component: resolve => require(['../pages/flyfile/uploadFile'], resolve)
+            },
+
             {
                 path: '*', //其他页面，强制跳转到登录页面
                 redirect: '/'
