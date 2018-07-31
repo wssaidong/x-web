@@ -14,7 +14,8 @@ var server = new WebpackDevServer(compiler, {
             target: config.target,
             changeOrigin: true
         }
-    }
+    },
+    disableHostCheck: true
 })
 
 server.listen(3000, (err) => {

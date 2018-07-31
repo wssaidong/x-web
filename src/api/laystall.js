@@ -11,3 +11,12 @@ export function tweets() {
     })
     return data
 }
+
+export function articles() {
+
+    var data = request({
+        url: BASE_URL + 'x/api/link/articles',
+        method: 'get'
+    })
+    return data
+}

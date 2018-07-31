@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import user from './modules/user'
 import tweets from './modules/tweets'
 import flyfile from './modules/flyfile'
+import laystall from './modules/laystall'
 
 Vue.use(Vuex)
 
@@ -12,5 +13,6 @@ export default new Vuex.Store({
         user,
         tweets,
         flyfile,
+        laystall
     }
 })
