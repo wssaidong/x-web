@@ -20,3 +20,12 @@ export function articles() {
     })
     return data
 }
+
+export function pic() {
+
+    var data = request({
+        url: BASE_URL + 'x/api/link/pic',
+        method: 'get'
+    })
+    return data
+}

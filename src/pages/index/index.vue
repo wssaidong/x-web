@@ -30,13 +30,7 @@
 		</el-header>
 		<el-main class="body">
 			<div>
-				<el-carousel indicator-position="outside">
-					<el-carousel-item v-for="item in 3" :key="item">
-						<div style="text-align: center;">
-							<img src="http://image.tianjimedia.com/uploadImages/2015/081/53/OU7UB453U6L9_680x500.jpg">
-						</div>
-					</el-carousel-item>
-				</el-carousel>
+				<vCarousel></vCarousel>
 			</div>
 			<div class="news">
 				<el-row :gutter="24">
@@ -46,7 +40,7 @@
 								<div style="margin-bottom: 10px">
 									<el-card :body-style="{ padding: '5px' }">
 										<div style="float: left;margin-right: 10px">
-											<img :src="item.contentImg"" class="image" style="height:140px;width: 220px">
+											<img :src="item.contentImg" class="image" style="height:140px;width: 220px">
 										</div>
 										<div>
 											<div class="title" style="padding-bottom: 10px">
