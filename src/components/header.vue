@@ -9,6 +9,16 @@
 			width: 1200px;
 			margin: 0 auto;
 		}
+		A{
+
+			text-decoration: none;
+		}
+		A:link{
+			color: black
+		}
+		A:visited{
+			color: black
+		}
 	}
 
 </style>

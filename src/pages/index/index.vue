@@ -44,7 +44,7 @@
 										</div>
 										<div>
 											<div class="title" style="padding-bottom: 10px">
-												<a :href="item.url"><h3>{{item.title}}</h3></a>
+												<a :href="item.url" target="_blank"><h3>{{item.title}}</h3></a>
 											</div>
 											<div class="content" style="padding-bottom: 10px">
 												<span>{{item.title}}</span>
@@ -88,7 +88,6 @@
 												<span>{{ item.body }}</span>
 											</div>
 											<div class="bottom clearfix" style="margin-top: 5px">
-												<span>{{ item.author }}</span>
 												<time class="time">{{ item.pubDate }}</time>
 											</div>
 										</div>
