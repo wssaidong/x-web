@@ -13,6 +13,11 @@ export default [
                 component: resolve => require(['../pages/index/'], resolve)
             },
             {
+                path: '/pic', //首页
+                meta: { auth: false },
+                component: resolve => require(['../pages/pic/'], resolve)
+            },
+            {
                 path: '/flyfile', //首页
                 meta: { auth: false },
                 component: resolve => require(['../pages/flyfile'], resolve)

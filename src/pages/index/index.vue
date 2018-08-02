@@ -1,12 +1,5 @@
 <style lang="less" scoped>
 
-
-	.el-header {
-		background-color: #409EFF;
-		color: #333;
-		line-height: 60px;
-	}
-
 	.el-carousel__item h3 {
 		color: #475669;
 		font-size: 18px;
@@ -34,7 +27,7 @@
 			</div>
 			<div class="news">
 				<el-row :gutter="24">
-					<el-col :span="16">
+					<el-col :sm="24" :md="24" :lg="16">
 						<div class="left">
 							<div v-for="item in articles" >
 								<div style="margin-bottom: 10px">
@@ -58,7 +51,7 @@
 							</div>
 						</div>
 					</el-col>
-					<el-col :span="8">
+					<el-col :sm="24" :md="24" :lg="8">
 						<div class="right">
 							<div style="margin-bottom: 15px">
 								<video class="video" style="width: 100%;"
