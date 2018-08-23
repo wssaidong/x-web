@@ -17,7 +17,7 @@
     }
 </style>
 <template>
-    <el-carousel indicator-position="outside">
+    <el-carousel :interval="4000" type="card">
         <el-carousel-item v-for="item in pic" :key="item.id">
             <div style="text-align: center;">
                 <img :src="item.middle">

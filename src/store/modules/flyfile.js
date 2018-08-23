@@ -1,5 +1,7 @@
 import Vue from 'vue'
 
+import { flyFileUpload,flyFileCode } from '../../api/laystall'
+
 export const GET_FILE = 'GET_FILE'
 export const CLEAR_FILE = 'CLEAR_FILE'
 
@@ -19,7 +21,11 @@ export default {
     actions: {
         [GET_FILE]({commit}, data) {
             return new Promise((resolve, reject) => {
-                commit(GET_FILE, {path:'http://baidu.com'})
+                flyFileCode(data).then(response => {
+                        commit(GET_FILE, response.data)
+                    }
+                )
+
             })
         },
         [CLEAR_FILE]({commit}, data) {

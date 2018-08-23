@@ -29,3 +29,43 @@ export function pic() {
     })
     return data
 }
+
+export function video() {
+
+    var data = request({
+        url: BASE_URL + 'x/api/link/video',
+        method: 'get'
+    })
+    return data
+}
+
+export function msg(data) {
+
+    var data = request({
+        url: BASE_URL + 'x/api/collection/msg',
+        method: 'post',
+        params: data
+    })
+    return data
+}
+
+
+export function flyFileUpload(data) {
+
+    var data = request({
+        url: BASE_URL + 'x/api/flyFile/code',
+        method: 'post',
+        params: data
+    })
+    return data
+}
+
+export function flyFileCode(data) {
+
+    var data = request({
+        url: BASE_URL + 'x/api/flyFile',
+        method: 'get',
+        params: data
+    })
+    return data
+}
