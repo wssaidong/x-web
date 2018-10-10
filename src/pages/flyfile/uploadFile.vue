@@ -1,4 +1,11 @@
-<style>
+<style lang="less">
+
+    @media screen and(max-width:1024px){
+        .el-upload-dragger{
+            width: 100%;
+        }
+    }
+
     .el-upload-list__item-name{
         text-align: left;
     }
@@ -13,30 +20,31 @@
                 <el-upload
                         ref="upload"
                         :limit="5"
+                        list-type="picture"
                         :on-change="handleChange"
+                        :on-preview="handlePreview"
                         drag
-                        action="http://api.laystall.top/x/api/file?dir=flyFile/tmp"
+                        action="http://119.29.232.163:9999/x/api/biz/edp/file?dir=picku/tmp"
+                        :file-list="fileList"
                         multiple>
                     <i class="el-icon-upload"></i>
                     <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
                     <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
                 </el-upload>
-
-                <div style="margin-top: 20px">
-                    <el-button size="small" type="success" @click="submitUpload">生成文件码</el-button>
-                </div>
-
-                <div v-if="fileCode" style="margin-top: 10px">
-                    <el-tag type="success">{{fileCode}}</el-tag>
-                </div>
             </div>
-
         </el-main>
     </el-container>
 </template>
 <script>
-    import { flyFileUpload } from '../../api/laystall'
     export default {
+        metaInfo: {
+            title: 'X-图床',
+            meta: [{
+                name: 'Keywords',
+                content: '免费,图床,oss'
+            }]
+        },
+
         data() {
             return {
                 fileList: [],
@@ -47,23 +55,20 @@
 
         methods: {
             handleChange(file, fileList) {
-                this.fileList = fileList;
-                this.fileChange = true;
+                if(file.response){
+                    file.name = "http:" + file.response.url;
+                    fileList[fileList.length-1] = file;
+                }
+                this.fileList =  fileList
+            },
+            handlePreview(file){
+                this.$copyText(file.name);
+                this.$message({
+                    message: '已复制链接'
+                });
             },
             submitUpload() {
-                if( this.fileList.length == 0){
-                    return ;
-                }
-                if(!this.fileChange){
-                    return ;
-                }
-                var data = this.fileList.map(item => {
-                    return {fileName:item.response.fileName,url:item.response.url};
-                })
-                flyFileUpload({fileList:JSON.stringify(data)}).then(response => {
-                    this.fileCode = response.data.code
-                    this.fileChange = false;
-                })
+
             },
         }
     }

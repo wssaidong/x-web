@@ -9,6 +9,10 @@ export default [
         children: [
             {
                 path: '/', //首页
+                redirect: '/picku/upload'
+            },
+            {
+                path: '/index', //首页
                 meta: { auth: false },
                 component: resolve => require(['../pages/index/'], resolve)
             },
@@ -23,7 +27,7 @@ export default [
                 component: resolve => require(['../pages/flyfile'], resolve)
             },
             {
-                path: '/flyfile/upload',
+                path: '/picku/upload',
                 meta: { auth: false },
                 component: resolve => require(['../pages/flyfile/uploadFile'], resolve)
             },

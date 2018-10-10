@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
+import VueClipboard from 'vue-clipboard2'
+import Meta from 'vue-meta'
+
 import 'element-ui/lib/theme-chalk/index.css';
 
 import routes from './config/routes'
@@ -17,6 +20,8 @@ Object.keys(components).forEach((key) => {
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
+Vue.use(VueClipboard)
+Vue.use(Meta)
 
 const router = new VueRouter({
     routes
