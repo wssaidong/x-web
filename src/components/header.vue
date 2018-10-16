@@ -2,11 +2,11 @@
 
 	@media screen and(min-width:1024px){
 		.header{
-			width: 1500px;
+			//width: 1500px;
 			margin: 0 auto;
 		}
 		.body{
-			width: 1500px;
+			//width: 1500px;
 			margin: 0 auto;
 		}
 	}

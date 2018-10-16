@@ -1,7 +1,7 @@
 import request from '../utils/request'
 
 
-const BASE_URL = "http://119.29.232.163:9999/x/api/biz/";
+const BASE_URL = "https://gateway.xcloud.laystall.top/x/api/biz/";
 
 export function tweets() {
 
